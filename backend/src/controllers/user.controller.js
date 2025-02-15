@@ -15,6 +15,22 @@ export const getUsers=async(req,res)=>{
     }
 }
 
+export const searchUser = async(req, res) =>{
+    try {
+    const { designation } = req.query;
+
+    const regex = new RegExp(designation, 'i');
+
+    const users = await User.find({ designation: regex });
+
+    res.status(httpStatus.OK).json({message : users});
+
+  } catch (error) {
+
+    res.status(500).json({ message: error.message });
+  }
+}
+
 export const postUsers = async (req, res) => {
     try {
         const {email, password, role, firstName, lastName, phone} = req.body;
@@ -63,6 +79,7 @@ export const deleteUsers=async(req,res)=>{
         res.status(500).json({message:err.message});
     }
 }
+
 
 export const getOneUser = async (req, res) => {
     try {

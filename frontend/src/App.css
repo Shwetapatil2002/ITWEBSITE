@@ -1,7 +1,44 @@
-body{
-  font-family: montserrat !important;
-
+body {
+  background-color: #A1D6E2;
+  color: #1995AD;
 }
 
+.min-vh-100 {
+  background-color: #f1f1f2;
+}
 
-/* dont delete or change this */
+.card {
+  background-color: #A1D6E2;
+  color: #1995AD;
+}
+
+.text-muted {
+  color: #888 !important;
+}
+
+.btn-primary {
+  background-color: #1995AD;
+  border-color: #1995AD;
+}
+
+.btn-primary:hover {
+  background-color: #A1D6E2;
+  color: #1995AD;
+}
+
+.btn-light {
+  background-color: #f1f1f2;
+  border-color: #1995AD;
+}
+
+.modal-content {
+  background-color: #A1D6E2;
+  color: #1995AD;
+}
+
+.form-control,
+.form-select {
+  background-color: #f1f1f2;
+  border-color: #1995AD;
+  color: #1995AD;
+}

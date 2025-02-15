@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
     enum: ["employee", "superAdmin", "thirdParty"],
     required: true 
   },
+  image: {
+    type: String,
+    required: true
+  },
   designation: { 
     type: String,
     enum: ["HR", "Project Manager", "Team Lead", "Team Member"],

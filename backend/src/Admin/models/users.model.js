@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { image } from "pdfkit";
 
 const userSchema = new mongoose.Schema({
   image:{
@@ -25,6 +26,10 @@ const userSchema = new mongoose.Schema({
     required: function () { 
       return this.role === "employee"; 
     }
+  },
+  image : {
+    type : String,
+    required : true
   },
   companyId: { 
     type: mongoose.Schema.Types.ObjectId, 

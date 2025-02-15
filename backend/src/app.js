@@ -9,7 +9,6 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// Resolve correct directory path
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -61,7 +60,8 @@ app.use("/api/v1", userNotifyRouter);
 app.use("/api/v1", performanceRouter);
 app.use("/api/v1", taskRouter);
 app.use("/api/v1", empRouter);
-app.use("/api/v1",project);
+app.use("/api/v1", project);
+
 
 app.listen(process.env.PORT, () => {
   console.log("server is running on port", process.env.PORT);
