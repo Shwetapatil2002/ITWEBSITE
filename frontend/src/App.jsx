@@ -18,12 +18,11 @@ import EmployeeDashBoard from "./components/DashboardComponent/EmployeeDashBoard
 import ThirdPartyDB from "./components/DashboardComponent/ThirdPartyDB.jsx";
 import OHome from "./pages/HomePage/OHome.jsx";
 import "./App.css"
-
+import FetchEmp from "./routes/fetchEmployees.jsx";
 import Taskoverview from "./components/DashboardComponent/2Employee/Taskoverview.jsx";
-=======
-import PerformancePage from "./pages/PerformancePage";
-import PerformanceDetail from "./components/DashboardComponent/3ThirdParty/Performance/PerformanceDetail.jsx";
-import { PerformanceProvider } from "./context/PerformanceContext";
+// import PerformancePage from "./pages/PerformancePage";
+// import PerformanceDetail from "./components/DashboardComponent/3ThirdParty/Performance/PerformanceDetail.jsx";
+// import { PerformanceProvider } from "./context/PerformanceContext";
 
 
 
@@ -33,74 +32,34 @@ function App() {
     <>
       <AuthProvider>
         <UserContextProvider>
-          <AdminContextProvider>
-            <ThirdPartyContextProvider>
-              <EmployeeContextProvider>
-              <PerformanceProvider>
                 <Routes>
-                  {/* <Route path="/getemp1" element={<EmployeeListPage />} /> */}
 
                   <Route path="/" element={<OHome />} />
                   {/* <Route path="/home" element={<Home1 />} /> */}
                   <Route path="/login" element={<Login />} />
                   <Route path="/admin" element={<AdminDashBoard />} />
                   <Route path="/employee" element={<EmployeeDashBoard />} />
-                  <Route path="/tdparty" element={<ThirdPartyDB />} />
-                  <Route path="/overview" element={<Taskoverview />} />
+                  
+                  {/* <Route path="/tdparty" element={<ThirdPartyDB />} /> */}
+                  {/* <Route path="/overview" element={<Taskoverview />} /> */}
+                  <Route path="/users" element = {<FetchEmp/>} />
                   
 
 
                   {/* Performance Metrics Routes */}
-                  <Route path="/performances" element={<PerformancePage />} />
+                  {/* <Route path="/performances" element={<PerformancePage />} />
                   <Route path="/performance/:id" element={<PerformanceDetail />} />
 
-                  <Route path ="/tdparty/EarningManagement/invoice" element={<InvoiceGenerator />} />
-                  {/* <Route
-                    path="/employee"
-                    element={
-                      <ProtectedRoute allowedRoles={['employee']}>
-                          <EmployeeDashBoard />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="/getemp"
-                    element={
-                      <ProtectedRoute allowedRoles={['admin']}>
-                        <EmployeeListPage />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="/admin"
-                    element={
-                      <ProtectedRoute allowedRoles={['admin']}>
-                        <AdminDashBoard />
-                      </ProtectedRoute>
-                    }
-                  />
-
-                  {/* Third Party-only route */}
-                  {/* <Route
-                    path="/third-party"
-                    element={
-                      <ProtectedRoute allowedRoles={['third-party']}>
-                        <ThirdPartyDB />
-                      </ProtectedRoute>
-                    } */}
-                  {/* />  */}
-
+                  <Route path ="/tdparty/EarningManagement/invoice" element={<InvoiceGenerator />} /> */}
+                 
                   {/* Unauthorized page */}
                   <Route path="/unauthorized" element={<Unauthorized />} />
 
                   {/* 404 Not Found route */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-                <Footer />
-                </PerformanceProvider>
-              </EmployeeContextProvider>
-            </ThirdPartyContextProvider>
-          </AdminContextProvider>
+                {/* </PerformanceProvider> */}
+             
         </UserContextProvider>
       </AuthProvider>
     </>
